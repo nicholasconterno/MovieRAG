@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plot Query</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 1px;
+            padding-bottom: 1px;
+            background-color: #161616;
+            color: #FFFFFF; /* Set text color to white */
+            font-family: 'Roboto', sans-serif;
+        }
+        .header {
+            background-color: transparent; /* Oscar's yellow */
+            color: #FFFFFF; /* Set header text color to white */
+            padding: 20px 0;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+        }
+        .form-plot-query {
+            max-width: 600px;
+            min-width: 500px;
+            max-height: 500px;
+            height: auto;
+            width: auto;
+            padding: 30px;
+            margin: 20px auto;
+            background-color: rgba(60, 60, 60, 0.409); /* Semi-transparent background */
+            border-radius: 50px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Box shadow for depth */
+            backdrop-filter: blur(5px); /* Blur effect for background */
+            display: inline-block; /* This makes the container only as wide as its content */
+            overflow: hidden;
+            font-family: 'Roboto', sans-serif;
+        }
+        .form-plot-query .form-control {
+            background-color: transparent;
+            border: 1px solid #FFFFFF;
+            color: #FFFFFF;
+        }
+        .form-plot-query .form-control:focus {
+            background-color: transparent;
+            color: #FFFFFF;
+            border-color: #484848; /* Highlight color */
+        }
+        .form-plot-query input[type="submit"] {
+            background-color: #484848; /* Oscar's yellow */
+            color: black;
+            border: none;
+        }
+        .form-plot-query input[type="submit"]:hover {
+            background-color: #696969; /* Darker yellow */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">  
+        <div class="row"> 
+            <div class="col-md-2">
+                <div class="left-sidebar">
+                    <div class="movie-list">
+                        <div class="'movie-item">
+                            <!-- <p>Anatomy of a Fall</p> -->
+                            <img src="https://m.media-amazon.com/images/M/MV5BOGI2MzQ1NzQtMmVkOC00ZGI0LWI3YjQtN2FjMzQ1NmRhNzFhXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_.jpg" alt="Movie Poster" width="100" height="150">
+                        </div>
+                        <div class="'movie-item">
+                            <img src="https://musicimage.xboxlive.com/catalog/video.movie.8D6KGWXXPGGS/image?locale=en-us&mode=crop&purposes=BoxArt&q=90&h=150&w=100&format=jpg" alt="Movie Poster">
+                        </div>
+                        <div class="'movie-item">
+                            <img src="https://musicimage.xboxlive.com/catalog/video.movie.8d6kgwxzldk8/image?locale=en-us&mode=crop&purposes=BoxArt&q=90&h=150&w=100&format=jpg" alt="Movie Poster">
+                        </div>
+                        <div class="'movie-item">
+                            <img src="https://static.displate.com/857x1200/displate/2023-09-17/b7b1263c47e08bbeceb0f20e1e5d2e84_b913519079b7695784c9b1fdfbb693e2.jpg" alt="Movie Poster" height="150" width="100" >
+                        </div>
+                        <div class="'movie-item">
+                            <img src="https://m.media-amazon.com/images/M/MV5BYzRmOGQwZjktYjM2Ni00M2NmLWFlZDYtZGFhM2RkM2VhZDI1XkEyXkFqcGdeQXVyMTM1NjM2ODg1._V1_.jpg" alt="Movie Poster" width="100" height="150">
+                        </div>
+            </div>
+                </div>
+            </div>
+            <div class="container form-plot-query">
+                <div class="header">
+                    <h2>Movie Plot Query</h2>
+                </div>
+                <h1 class="h3 mb-3 font-weight-normal">Ask a Question About the Plot</h1>
+                <form method="post">
+                    <input type="text" name="question" class="form-control" placeholder="Enter your question here..." value="{{ request.form.question }}" required autofocus>
+                    <input class="btn btn-lg btn-primary btn-block" type="submit" value="Ask">
+                </form>
+    
+                {% if answer %}
+                    <div class="mt-3">
+                        <h2>Answer:</h2>
+                        <p>{{ answer }}</p>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="col-md-2">
+                <div class="right-sidebar">
+                        <div class="movie-list">
+                            <div class="'movie-item">
+                                <!-- <p>Anatomy of a Fall</p> -->
+                                <img src="https://musicimage.xboxlive.com/catalog/video.movie.8D6KGWXXQ1TJ/image?locale=en-us&mode=crop&purposes=BoxArt&q=90&h=150&w=100&format=jpg" alt="Movie Poster">
+                            </div>
+                            <div class="'movie-item">
+                                <img src="https://musicimage.xboxlive.com/catalog/video.movie.8D6KGWXXQH4B/image?locale=en-us&mode=crop&purposes=BoxArt&q=90&h=150&w=100&format=jpg" alt="Movie Poster">
+                            </div>
+                            <div class="'movie-item">
+                                <img src="https://musicimage.xboxlive.com/catalog/video.movie.8d6kgwxznjtq/image?locale=en-us&mode=crop&purposes=BoxArt&q=90&h=150&w=100&format=jpg" alt="Movie Poster">
+                            </div>
+                            <div class="'movie-item">
+                                <img src="https://musicimage.xboxlive.com/catalog/video.movie.8D6KGWXXTF1F/image?locale=en-us&mode=crop&purposes=BoxArt&q=90&h=150&w=100&format=jpg" alt="Movie Poster">
+                            </div>
+                            <div class="'movie-item">
+                                <img src="https://musicimage.xboxlive.com/catalog/video.movie.8d6kgwxxtl7j/image?locale=en-us&mode=crop&purposes=BoxArt&q=90&h=150&w=100&format=jpg" alt="Movie Poster">
+                            </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
