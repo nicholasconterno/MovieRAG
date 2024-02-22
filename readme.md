@@ -1,3 +1,24 @@
+## Run the App Locally
+To run the script and access the application in your browser, follow these steps:
+
+1. Execute the script `app.py` located in the `scripts` directory.
+2. Once the script is running, open your web browser.
+3. Navigate to the specified local URL.
+
+Here's the command to run the script:
+
+```bash
+python scripts/app.py
+```
+
+After running this command, access the application by visiting:
+
+```
+http://127.0.0.1:5001
+```
+
+in your web browser.
+
 ### Evaluation Questions
 
 I will evaluate below Chat-GPT-4 without RAG and with RAG on the following 15 questions, based upon accuracy, hallucination, and relevance)
