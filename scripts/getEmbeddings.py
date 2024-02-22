@@ -7,7 +7,7 @@ import numpy as np
 
 dotenv.load_dotenv()
 
-OPEN_AI_KEY = os.getenv('OPEN-AI-KEY')
+OPEN_AI_KEY = os.getenv('OPEN_AI_KEY')
 
 def get_embeddings(text):
     response = requests.post(

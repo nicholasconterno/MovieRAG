@@ -6,7 +6,7 @@ import os
 
 #import dotenv 
 dotenv.load_dotenv()
-OPEN_AI_KEY = os.getenv('OPEN-AI-KEY')
+OPEN_AI_KEY = os.getenv('OPEN_AI_KEY')
 # SQLite setup
 def setup_database():
     conn = sqlite3.connect('movies.db')
