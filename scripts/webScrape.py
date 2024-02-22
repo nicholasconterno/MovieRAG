@@ -48,21 +48,22 @@ def scrape_movie_text(movie_name):
 
 # Setup database
 setup_database()
+def scrape():
+    # List of movies to scrape
+    movies = ['anatomy-of-a-fall', 'maestro', 'american-fiction',
+            'barbie', 'oppenheimer', 'the-zone-of-interest', 'the-holdovers',
+            'poor-things','past-lives','killers-of-the-flower-moon']
 
-# List of movies to scrape
-movies = ['anatomy-of-a-fall', 'maestro', 'american-fiction',
-          'barbie', 'oppenheimer', 'the-zone-of-interest', 'the-holdovers',
-          'poor-things','past-lives','killers-of-the-flower-moon']
+    # Iterate over movies and scrape content
+    for movie in movies:
+        scrape_movie_text(movie)
 
-# Iterate over movies and scrape content
-for movie in movies:
-    scrape_movie_text(movie)
-
-# print out the data
-conn = sqlite3.connect('movies.db')
-cur = conn.cursor()
-cur.execute("SELECT * FROM movie_text")
-rows = cur.fetchall()
-for row in rows:
-    print(row)
-conn.close()
+    # print out the data
+    conn = sqlite3.connect('movies.db')
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM movie_text")
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
+    conn.close()
+scrape()
