@@ -1,3 +1,6 @@
+## Visit the Website
+https://movieplotquery.azurewebsites.net/
+
 ## Run the App Locally
 To run the script and access the application in your browser, follow these steps:
 
